@@ -10,7 +10,6 @@ class StarWars extends Component {
       command:"",
       hidden:true,
       landed:false,
-      gameover:false,
       r2d2:{
         position:[0,0],
         // direction = tuple where North [0,1], South [0,-1], West [-1,0], East[1,0]
