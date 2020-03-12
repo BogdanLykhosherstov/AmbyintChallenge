@@ -70,17 +70,24 @@ class StarWars extends Component {
   // Land droid and Obiwan. Only invoked if !landed already
   land = () => {
     if(!this.state.landed){
+      do{
+        this.setState({
+          r2d2 : {
+            ...this.state.r2d2,
+            position:[this.getRandomInt(),this.getRandomInt()],
+          },
+          obiwan : {
+            position:[this.getRandomInt(),this.getRandomInt()]
+          },
+        });
+      }
+      // regenerate positions if they spawn in the same place randomly
+      while(this.arrayCompare(this.state.r2d2.position,this.state.obiwan.position))
+      //after generating position
       this.setState({
-        r2d2 : {
-          ...this.state.r2d2,
-          position:[this.getRandomInt(),this.getRandomInt()],
-        },
-        obiwan : {
-          position:[this.getRandomInt(),this.getRandomInt()]
-        },
         hidden:false,
         landed:true
-      });
+      })
     }
   }
 
