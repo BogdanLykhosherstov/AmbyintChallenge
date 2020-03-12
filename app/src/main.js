@@ -7,8 +7,6 @@ class StarWars extends Component {
   constructor(){
     super();
     this.state = {
-      // generating 100x100 (row x column) array filled with zeroes, where 1 will represent R2D2 location, and 2 - Obiwan
-      grid:Array(100).fill(Array(100).fill(0)).map(a => a.slice()),
       command:"",
       hidden:true,
       landed:false,
